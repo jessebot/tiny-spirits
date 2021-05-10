@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     void OnCollisionStay(Collision other) {
         isGrounded = true;
     }
+
+    void OnCollisionExit(Collision other) {
+        isGrounded = false;
+    }
   
     void OnMove(InputValue movementValue)
     {
