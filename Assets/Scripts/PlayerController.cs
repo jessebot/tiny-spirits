@@ -17,11 +17,13 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
 
         // for the collectable count
@@ -44,16 +46,18 @@ public class PlayerController : MonoBehaviour
 
         movementX = movementVector.x;
         movementY = movementVector.y;
+
+        // animations
+        animator.SetBool("IsWalking", true);
     }
 
     void OnJump(InputValue jumpValue)
     {
-
-    if(isGrounded)
-    {
-        rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-        isGrounded = false;
-    }
+        if(isGrounded)
+        {
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
     }
 
     void SetCountText()
@@ -71,10 +75,9 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
         rb.AddForce(movement * speed);
-
-
     }
 
+    // for collecting things
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("PickUp"))
