@@ -14,7 +14,7 @@ This started out as doing the rollable tutorial for Unity 2019, but now I'm buil
 * Fix particles to be stars and smaller
 * Change material for skating trail, thicken line
 * Attempt yet another skybox, current image van mijn tuin <3
-* Add CI/CD -- jenkins? GHA?
-* * Add version in readme
-* * Add downloadable release
-* * Fix UI -- only some screensizes display text :<
+* Add CI/CD : jenkins? GHA?
+  - Add version in readme
+  - Add downloadable release
+  - Fix UI : only some screensizes display text :<
