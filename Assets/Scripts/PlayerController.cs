@@ -6,12 +6,14 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0;
+    public float moveSpeed = 0;
     public Vector3 jump;
     public float jumpForce = 2.0f;
     public bool isGrounded;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameObject beginTextObject;
+
  
     private Rigidbody rb;
     private int count;
@@ -26,14 +28,19 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
 
+
         // for the collectable count
         count = 0;
         SetCountText();
+
+        // begin and end text
         winTextObject.SetActive(false);
     }
 
     void OnCollisionStay(Collision other) {
         isGrounded = true;
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsIdle", true);
     }
 
     void OnCollisionExit(Collision other) {
@@ -49,9 +56,12 @@ public class PlayerController : MonoBehaviour
 
         // animations
         animator.SetBool("IsWalking", true);
+        animator.SetBool("IsIdle", false);
+        beginTextObject.SetActive(false);
+
     }
 
-    void OnJump(InputValue jumpValue)
+    void OnJump()
     {
         if(isGrounded)
         {
@@ -64,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
         // hardcoded shiny
-        if(count >= 12)
+        if(count >= 10)
         {
             winTextObject.SetActive(true);
         }
@@ -74,7 +84,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement * moveSpeed);
     }
 
     // for collecting things
