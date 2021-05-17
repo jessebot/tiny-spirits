@@ -10198,8 +10198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -789.80005, y: 451.8}
-  m_SizeDelta: {x: -25.799988, y: 0}
+  m_AnchoredPosition: {x: -425.49997, y: 253.25}
+  m_SizeDelta: {x: 851.00006, y: 506.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89218129
 MonoBehaviour:
@@ -10671,7 +10671,7 @@ RectTransform:
   m_GameObject: {fileID: 119689040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13, y: -0.08, z: 0.07291032}
+  m_LocalScale: {x: 0.83, y: -0.85, z: 0.07291032}
   m_Children:
   - {fileID: 315178147}
   m_Father: {fileID: 1565578466}
@@ -10679,8 +10679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -79.41205, y: -394.1}
-  m_SizeDelta: {x: 4520.824, y: 1314.2}
+  m_AnchoredPosition: {x: 0, y: -195.6}
+  m_SizeDelta: {x: 0, y: -391.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119689042
 MonoBehaviour:
@@ -11658,15 +11658,15 @@ RectTransform:
   m_GameObject: {fileID: 315178146}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.6923075, y: -12.5, z: 13.71548}
+  m_LocalScale: {x: 1.2048192, y: -1.1764705, z: 13.715481}
   m_Children: []
   m_Father: {fileID: 119689041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 610.8624, y: 3023.1248}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 110.60242, y: 303.7294}
+  m_SizeDelta: {x: 130.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315178148
 MonoBehaviour:
@@ -11689,10 +11689,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Hoi, friend!
 
-    I''m not very good at skating on ice!
+    I''m not very good at skating on ice :(
 
-    Can you help
-    me collect all the hearts?'
+    Can you
+    help me learn by collecting all the hearts around this frozen pond?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -11714,13 +11714,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 93368250
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
