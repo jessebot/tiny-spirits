@@ -15,46 +15,48 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        projectPath:
-          - .
         unityVersion:
           - 2019.4.26f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
-          # - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          # - StandaloneLinux64 # Build a Linux 64-bit standalone.
+
     steps:
+      # checkout
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           lfs: true
+
+      # cache
       - uses: actions/cache@v2
         with:
-          path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
-          restore-keys: |
-            Library-${{ matrix.projectPath }}-
-            Library-
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+
+      # test
       - uses: game-ci/unity-test-runner@v2
         id: testRunner
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      # test results upload
       - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
+      
+      # Build
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
+      
+      # output
       - uses: actions/upload-artifact@v2
         with:
           name: Build
