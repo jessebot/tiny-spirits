@@ -13,12 +13,13 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject beginTextObject;
-
  
     private Rigidbody rb;
     private int count;
     private float movementX;
     private float movementY;
+    private float movementZ;
+    
     private Animator animator;
 
     // Start is called before the first frame update
@@ -36,6 +37,37 @@ public class PlayerController : MonoBehaviour
         // begin and end text
         winTextObject.SetActive(false);
     }
+    void FixedUpdate()
+    {
+        movementZ = 0.0f;
+        Vector3 movement = new Vector3(movementX, movementZ, movementY);
+        rb.AddForce(movement * moveSpeed);
+    }
+
+    // moving left and right and back and forth
+    void OnMove(InputValue movementValue)
+    {
+        // on PC, Mac, Linux
+        Vector2 movementVector = movementValue.Get<Vector2>();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+
+        // animations
+        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsIdle", false);
+        beginTextObject.SetActive(false);
+    }
+
+    // jumping
+    void OnJump()
+    {
+        if(isGrounded)
+        {
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
 
     void OnCollisionStay(Collision other) {
         isGrounded = true;
@@ -46,27 +78,16 @@ public class PlayerController : MonoBehaviour
     void OnCollisionExit(Collision other) {
         isGrounded = false;
     }
-  
-    void OnMove(InputValue movementValue)
+
+    // for collecting things
+    void OnTriggerEnter(Collider other)
     {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-
-        movementX = movementVector.x;
-        movementY = movementVector.y;
-
-        // animations
-        animator.SetBool("IsWalking", true);
-        animator.SetBool("IsIdle", false);
-        beginTextObject.SetActive(false);
-
-    }
-
-    void OnJump()
-    {
-        if(isGrounded)
+        if(other.gameObject.CompareTag("PickUp"))
         {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            other.gameObject.SetActive(false);
+            count = count + 1;
+
+            SetCountText();
         }
     }
 
@@ -77,25 +98,6 @@ public class PlayerController : MonoBehaviour
         if(count >= 10)
         {
             winTextObject.SetActive(true);
-        }
-    }
-
-    void FixedUpdate()
-    {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-
-        rb.AddForce(movement * moveSpeed);
-    }
-
-    // for collecting things
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("PickUp"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-
-            SetCountText();
         }
     }
 }

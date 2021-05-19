@@ -7,8 +7,8 @@ The first level is an ice skating level where you will go with our little acorn 
 
 Nothing bad happens. Only wholesome vibes.
 
-## Screenshot From Current Game
-![Screenshot from current game](./game_screenshot.png)
+## Screencap From Current Game
+![Gif from current gameplay](./current_game_play.gif)
 
 ## Concept Art
 ![Concept Art of Forest Spirits for my Game](./smol_spirits.png)
