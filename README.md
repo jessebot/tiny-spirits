@@ -7,6 +7,9 @@ The first level is an ice skating level where you will go with our little acorn 
 
 Nothing bad happens. Only wholesome vibes.
 
+## Screencap From Current Game
+![Gif from current gameplay](./current_game_play.gif)
+
 ### Currently Supported Platforms
 * Mac
 * Windows
@@ -14,9 +17,6 @@ Nothing bad happens. Only wholesome vibes.
 #### Future Supported Platforms
 * Linux
 * Android
-
-## Screencap From Current Game
-![Gif from current gameplay](./current_game_play.gif)
 
 ## Concept Art
 <img src="./smol_spirits.png" alt="Concept Art of Forest Spirits for my Game" width="600"/>
