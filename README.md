@@ -19,7 +19,7 @@ Nothing bad happens. Only wholesome vibes.
 ![Gif from current gameplay](./current_game_play.gif)
 
 ## Concept Art
-![Concept Art of Forest Spirits for my Game](./smol_spirits.png)
+<img src="./smol_spirits.png" alt="Concept Art of Forest Spirits for my Game" width="600"/>
 
 ## TODOs
 * Fix the little butt on acorn boy :O (he has no butt)
