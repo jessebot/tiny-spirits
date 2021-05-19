@@ -7,6 +7,14 @@ The first level is an ice skating level where you will go with our little acorn 
 
 Nothing bad happens. Only wholesome vibes.
 
+### Currently Supported Platforms
+* Mac
+* Windows
+
+#### Future Supported Platforms
+* Linux
+* Android
+
 ## Screencap From Current Game
 ![Gif from current gameplay](./current_game_play.gif)
 
