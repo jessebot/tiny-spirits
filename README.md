@@ -15,10 +15,8 @@ Nothing bad happens. Only wholesome vibes.
 
 ## TODOs
 * Fix the little butt on acorn boy :O (he has no butt)
-* Fix particles to be stars and smaller (maybe color too?)
-* Change material for skating trail, thicken line
 * Attempt yet another skybox, current image van mijn tuin <3
-* Fix CI/CD
+* Fix CI/CD - kind of works for mac mono backend, but textures broken
   - GHA?
     - Add version in readme
     - Add downloadable release
