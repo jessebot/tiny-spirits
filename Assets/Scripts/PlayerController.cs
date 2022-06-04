@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEditor;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,7 +29,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
-
 
         // for the collectable count
         count = 0;
