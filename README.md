@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repo has migrated to https://git.smallhack.org/jessebot/tiny-spirits-unity
+
 # tiny-spirits
 My first Unity game :)
 
